@@ -53,38 +53,37 @@ header {
 }
 
 .about-me-container {
+    min-width: 730px;
     height: 30%;
     background-color: white;
     display: flex;
-    gap: 6rem;
+    gap: 1rem;
     box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
 
 .person-img-1-div {
-    max-width: 30%;
+    float: left;
+    max-width: 50%;
+    max-height: 550px;
 }
 
 .person-1-img {
     max-width: 100%;
-    max-height: 100%;
-    transform: translate(5%, 5%) scale(1.4);
+    transform: translate(-5%, -8%);
 }
 
 .about-me-text-container {
     display: flex;
     flex-direction: column;
     padding: 55px;
-    gap: 45px;
 }
 
-.about-me-text-container > div:first-of-type {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 15px;
+.about-me-text-container > h1, .about-me-text-container > p {
     line-height: 1.5;
 }
 
 .icons-container {
+    margin-top: 45px;
     display: flex;
     justify-content: flex-end;
     gap: 32px;
@@ -101,7 +100,7 @@ main {
 
 .section-2 {
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(400px, 1fr));
     grid-template-rows: auto;
     gap: 70px;
 }
@@ -159,6 +158,7 @@ main {
 
 .project-name {
     display: flex;
+    flex-wrap: nowrap;
     gap: 20px;
 }
 
@@ -171,7 +171,7 @@ main {
 }
 
 footer {
-    padding: 5rem 8rem;
+    padding: 3rem 8rem;
     background-color: #2596be;
 }
 
@@ -182,6 +182,7 @@ footer {
 
 .person-img-2-div {
     max-width: 50%;
+    min-width: 55%;
 }
 
 .person-img-2 {
@@ -190,10 +191,9 @@ footer {
 }
 
 .contact-me-div {
-    width: 35%;
+    width: auto;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 30px;
     color: white;
 }
@@ -204,6 +204,7 @@ footer {
 }
 
 .contact-div {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 35px;
@@ -228,62 +229,233 @@ footer {
 }
 
 
-@media (max-width: 1300px) {
+@media (max-width: 1660px) {
 
-    :root {
-        border: 3px solid green;
+    .project-card {
+        height: 500px;
     }
 
-    body {
-        /* border: 3px solid blue; */
-        width: 99vw;
-        height: 99vh;
+    .img-div {
+        h2, h2 > span {
+            font-size: 3.5rem;
+        }
     }
 
-    .global-wrapper {
-        border: 3px solid red;
-        width: inherit;
-        height: inherit;
+    p {
+        font-size: 1.4rem;
     }
 
-    header {
-        border: 3px solid cyan;
-        width: inherit;
-        height: inherit;
-        padding: 5rem;
+}
+
+@media (max-width: 1516px) {
+    .section-1 {
+        h1 {
+            font-size: 4rem;
+        }
     }
-
-    .background-div {
-        width: inherit;
-        height: 70%;
-    }
-
-    .about-me-container {
-        width: 85%;
-        height: 120%;
-    }
-
-    .about-me-text-container {
-        width: 100%;
-        padding: 10px;
-        /* gap: 20px; */
-
-    }
-
-    .about-me-text-container > div > h1 {
-        font-size: 3rem;
-    }
-
-    .about-me-text-container > div > p {
-        font-size: 1rem;
-    }
-
-    main {
-        border: 3px solid orange;
+    .section-2 {
+        grid-template-columns: repeat(2, minmax(380px, 400px));
+        justify-content: center;
     }
 
     footer {
-        border: 3px solid purple;
+        padding: 5rem 4rem 2.7rem;
+    }
+
+}
+
+@media (max-width: 1380px) {
+    .about-me-text-container {
+        div > h1 {
+            font-size: 3.5rem;
+        }
+
+        .icons-container {
+            display: none;
+        }
+    }
+
+    .contact-me-div {
+        h2 {
+            font-size: 2.3rem;
+        }
+
+        p, p > span {
+            font-size: 1.3rem;
+        }
+
+        .svg-smaller {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .icons-container-at-bottom {
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+}
+
+@media (max-width: 1308px) {
+    .about-me-container {
+        display: block;
+    }
+
+    .about-me-text-container {
+        display: block;
+        padding: 55px;
+    }
+
+    .person-img-1-div {
+        min-width: 400px;
+    }
+
+    .about-me-text-container {
+        h1 {
+            font-size: 3.7rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+
+}
+
+@media (max-width: 1148px) {
+    .section-2 {
+        grid-template-columns: minmax(380px, 400px);
+        justify-content: center;
+    }
+
+    .inside-footer-container {
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact-me-div {
+        gap: 20px;
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        p > span, p {
+            font-size: 1.1rem;
+        }
+
+        .svg-smaller {
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+
+    .icons-container-at-bottom {
+        justify-content: center;
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .contact-div {
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .person-img-2-div {
+        min-width: 80%;
+    }
+
+}
+
+@media (max-width: 968px) {
+    .global-wrapper {
+        gap: 40px;
+    }
+    
+    header {
+        padding: 10rem 2rem 0rem;
+    }
+
+    .about-me-container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-me-text-container {
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .about-me-text-container {
+        .icons-container {
+            margin-top: 45px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+    }
+
+    .person-img-1-div {
+        min-width: 500px;
+    }
+
+}
+
+@media (max-width: 856px) {
+    .about-me-container {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .background-div {
+        height: 50%;
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
+    }
+
+    .about-me-container {
+        min-width: auto;
+    }
+
+    .person-img-1-div {
+        min-width: 80%;
+    }
+
+    .person-img-2-div {
+        min-width: 90%;
+    }
+
+}
+
+@media (max-width: 504px) {
+    .about-me-text-container {
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .section-1 {
+        h1 {
+            font-size: 2.7rem;
+        }
     }
 
 }
